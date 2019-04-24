@@ -1,0 +1,24 @@
+This folder contains all files needed to launch a webdav server with docker containers. 
+
+	- install deps
+
+		apt install docker.io docker-compose apache2-utils 
+
+	- configure environment
+
+		nano .env
+
+			- fill in webdav domain with your own domain, make sure domains 
+			  dns records point to the server
+
+	- create username and password for webdav
+
+		htpasswd -B user.passwd (USER)
+
+	- start containers
+
+		docker-compose up -d
+
+Traefik dashboard default login is admin/admin
+
+	- to change default run "htpasswd -n admin" enter new password and paste the output into .env
