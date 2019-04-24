@@ -33,8 +33,8 @@ services:
       - ./acme.json:/acme.json                    # SSL certificates
     ports:
       # Map port 80 and 443 on the host to this container.
-      - "8069:80"
-      - "44369:443"
+      - "80:80"
+      - "443:443"
     labels:
       - "traefik.docker.network=frontend"
       - "traefik.enable=true"
